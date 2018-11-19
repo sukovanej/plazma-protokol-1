@@ -30,7 +30,7 @@ The result for each particle (electron, positron) is:
 For proton I setup the time scale to
 
 ```python
-tf = 38e12
+tf = 80e12
 ```
 
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/proton.png)
