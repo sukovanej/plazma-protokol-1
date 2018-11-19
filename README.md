@@ -27,6 +27,8 @@ The result for each particle (electron, positron) is:
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/electron.png)
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/positron.png)
 
+## Exercise 2
+
 For proton I setup the time scale to
 
 ```python
@@ -52,7 +54,7 @@ tf = 80e12
 **Exercise 3**
 * Study a charged particle in the following field and with the following velocity:
 
-[prob3](http://mathurl.com/ycp4a5wj.png)
+[prob3](https://camo.githubusercontent.com/84882879c5267533ff99ac912d8b84e11c750fa3/687474703a2f2f6d61746875726c2e636f6d2f796370346135776a2e706e67)
 
 * Do you observe any drift? If yes, for what parameters did you use? What is the direction of the drift velocity for an electron and a positron?
 * Try to match your observations with theoretical predictions.
