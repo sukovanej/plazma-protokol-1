@@ -27,6 +27,11 @@ The result for each particle (electron, positron) is:
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/electron.png)
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/positron.png)
 
+ - *What kind of drift do you observe?*
+    - Its ![eq2](https://latex.codecogs.com/gif.latex?E%20%5Ctimes%20B) drift
+ - *What is the direction of the drift for an electron a what for a positron?*
+    - Positron should have the drift velocity in a direction of ![eq2](https://latex.codecogs.com/gif.latex?E%20%5Ctimes%20B), thus in the direction of y axis. Electron have the same magnitude of velocity but in an opposite direction.
+
 ## Exercise 2
 
 For proton I setup the time scale to
@@ -36,6 +41,8 @@ tf = 80e12
 ```
 
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/proton.png)
+
+  - 
 
 # Exercises
 
