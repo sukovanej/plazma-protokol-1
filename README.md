@@ -3,7 +3,8 @@
 ## Exercise 1
 
 I configured the magnetic field to be of magnitude ![eq1](https://latex.codecogs.com/gif.latex?10%5E%7B-20%7D). I also
-set the charge and weight `q_e` and `m_e` for the electron and `q_p` and `m_p` for the proton.
+set the charge and weight `q_e` and `m_e` for the electron and `q_p` and `m_p` for the proton so I can easily change
+then on demand.
 
 ```python
 E = np.array([1.0, 0.0, 0.0])
@@ -14,6 +15,25 @@ q_p, m_p = 1.602e-19, 1.7e-27
 
 q, m = q_p, m_p
 ```
+
+I used time scale:
+
+```python
+tf = 38e9
+```
+
+The result for each particle (electron, positron) is:
+
+![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/electron.png)
+![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/positron.png)
+
+For proton I setup the time scale to
+
+```python
+tf = 38e12
+```
+
+![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/proton.png)
 
 # Exercises
 
