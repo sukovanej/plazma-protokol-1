@@ -43,8 +43,8 @@ tf = 80e12
 ![proton](https://raw.githubusercontent.com/sukovanej/plazma-protokol-1/master/proton.png)
 
 Amplitudes of the oscillation for proton are about 2000times bigger then for the electron/positron. Drift velocities
-should be the same - the time scale I used for proton is ~2000 times bigger and also the x-axis scale in the
-graph is also ~2000times bigger.
+should be the same - the time scale I used for proton is ~2000 times bigger and the x-axis scale in the
+graph is also about 2000times bigger - so it probably works.
 
 # Exercises
 
