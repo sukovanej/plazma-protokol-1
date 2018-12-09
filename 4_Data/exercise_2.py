@@ -11,14 +11,23 @@ for i in range(0, 3):
     f.close()
 
     data = d.replace('\t', '\n').split('\n')[:-1:]
-    x = np.array([float(j) / eVk  for j in data[0::2]])
-    y = np.array([np.log(float(j) / (1.602 * 10**-19)) for j in data[1::2]])
-
-    # excitation threshold ~ -3eV
-    # ionatization threshold ~ -2eV
+    x = np.array([float(j) / eVk for j in data[0::2]])
+    y = np.array([np.log10(float(j)) for j in data[1::2]])
 
     plt.plot(x, y, c[i], label=filename)
-    plt.xlim(0, 1e6 / eVk)
+    plt.xlim(0, 5e6 / eVk)
 
 plt.legend()
 plt.show(block=True)
+
+# What is on the x-axis, what o y-axis. Can the threshold be -2eV? Can the
+# temperature be negative? Threshold is always the value of the independent
+# variable (temperature).
+# -------------------------------------------------------------------------
+# On the x-axis are temperatures of electrons (in eV), y-axis contains effective 
+# cross-section magnitudes [m^2]. I understand now, firstly I looked up for a wrong
+# axis and I forgot it is actually log-scaled.
+
+# ionatization threshold ~ 70 eV
+# excitation threshold ~ 30 eV
+
