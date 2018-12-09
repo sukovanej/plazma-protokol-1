@@ -15,9 +15,15 @@ B = np.array([0.0, 0.0, 1e-11])
 # q = 1 and m = 1
 
 q = 1.602e-19
-# If the charge is +e, the particle drifts to "the left" in the graph
-# in case of negative charge, it has the same magnitude but oposite direction
 m = 9.109e-31
+
+# the direction of the drift is given by E x B
+# >>> np.cross([1, 0, 0], [0, 0, 1])
+# array([ 0, -1,  0])
+
+# the drift doesn't depend on the charge sign nor the mass
+# so both electron and positron drift "to the left" in the graph (because of the negative
+# sign of the vector product)
 
 ti = 0.0
 tf = 10.0
