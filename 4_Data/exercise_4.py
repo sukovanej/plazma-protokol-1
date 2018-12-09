@@ -41,7 +41,7 @@ def rotate(l, n):
 
 regular_matrix = [rotate(range(0, 11), value) for value in range(0, 11)]
 
-print(_inv_matrix(np.array(matrix)))
+print(_inv_matrix(np.array(regular_matrix)))
 
 """
 result:
