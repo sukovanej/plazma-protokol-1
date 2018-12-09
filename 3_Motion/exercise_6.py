@@ -26,27 +26,30 @@ re = 6.38e6
 Ek_ev = 5e7
 
 #Velocity
-vr_0 = c/np.sqrt(1.0+m*c**2/Ek_ev/np.abs(q))
-
-# If the initial goes to zero I need to scale the `tf` so I can see some motion
-# on the other side, from some experimenting with the maximal `dr` I can see that
-# when its greater then ~25e7 motion is no longer stable.
-dr = (-0.9999 * vr_0, 25e7)
-
-vr = vr_0 + dr[0]
+vr = c/np.sqrt(1.0+m*c**2/Ek_ev/np.abs(q))
 vp = 0.0
 vt = np.pi/4
 v = np.array([vr*np.sin(vt)*np.cos(vp),vr*np.sin(vt)*np.sin(vp),vr*np.cos(vt)])
+
 #Position
-rr = 2.5*re
+#       min       max
+dr = (0.1 * re, 6 * re)
+
+# If the initial position goes to 6 * re above the ground the motion is
+# no longer stable. 
+# If the initial position is ~ 0.1 * re above the ground the particle starts hitting
+# the ground.
+
+rr = re + dr[0]
 rp = 0.0
 rt = np.pi/2
 r = np.array([rr*np.sin(rt)*np.cos(rp),rr*np.sin(rt)*np.sin(rp),rr*np.cos(rt)])
+
 #State vector
 y0 = np.array([r[0],r[1],r[2],v[0],v[1],v[2]])
 
 ti = 0.0
-tf = 25.0
+tf = 10.0
 num_points = 10000
 t = np.linspace(ti,tf,num_points)
 
