@@ -39,7 +39,7 @@ r = np.array([rr*np.sin(rt)*np.cos(rp),rr*np.sin(rt)*np.sin(rp),rr*np.cos(rt)])
 y0 = np.array([r[0],r[1],r[2],v[0],v[1],v[2]])
 
 ti = 0.0
-tf = 25.0
+tf = 50.0
 num_points = 10000
 t = np.linspace(ti,tf,num_points)
 

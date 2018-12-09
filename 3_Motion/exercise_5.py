@@ -39,7 +39,7 @@ r = np.array([rr*np.sin(rt)*np.cos(rp),rr*np.sin(rt)*np.sin(rp),rr*np.cos(rt)])
 y0 = np.array([r[0],r[1],r[2],v[0],v[1],v[2]])
 
 ti = 0.0
-tf = 25.0
+tf = 1.0
 num_points = 10000
 t = np.linspace(ti,tf,num_points)
 
@@ -51,19 +51,40 @@ x = [ i[0]/re for i in res ]
 y = [ i[1]/re for i in res ]
 z = [ i[2]/re for i in res ]
 
-u, v = np.mgrid[0:2*np.pi:20j, 0:np.pi:10j]
-xs = np.cos(u)*np.sin(v)
-ys = np.sin(u)*np.sin(v)
-zs = np.cos(v)
+r = []
+phi = []
+theta = []
 
-plt.plot(t, x, c="b")
-plt.plot(t, y, c="r")
-plt.plot(t, z, c="g")
+def to_spherical(x, y, z):
+    r = np.sqrt(x * x + y * y + z * z)
+    theta = np.arccos(z / r) * 180 / np.pi
+    phi = np.arctan2(y, x) * 180 / np.pi
+    return r, theta, phi
+
+for i, _ in enumerate(x):
+    polar = to_spherical(x[i], y[i], z[i])
+    r.append(polar[0])
+    phi.append(polar[1])
+    theta.append(polar[2] / np.pi * 180)
+
+plt.plot(t, r, c="b")
+plt.plot(t, phi, c="r")
+plt.plot(t, theta, c="g")
 
 plt.legend([
-    'x-axis of the motion',
-    'y-axis of the motion',
-    'z-axis of the motion',
+    'r-axis of the motion',
+    'phi-axis of the motion [rads]',
+    'theta-axis of the motion [degrees]',
 ])
+
+# From the graph analysis
+# - the distance from the earth is remaining almost the same during the motion
+# - the particle is drifting alogn the magnetic field lines, near the equator the gyration
+#   is not as conspicuous as near the pole because in the equator the B field is parallel
+#   with the particle velocity
+# - due to the mirror effect for theta = n * pi the particle change the direction (the phi-axis
+#   is a harmonic function) because near the poles the magnetic field lines are more 
+#   concentrated, also one can observe that the theta-axis curve changes quicker near 
+#   pi, 2pi, 3pi, etc...
 
 plt.show()
